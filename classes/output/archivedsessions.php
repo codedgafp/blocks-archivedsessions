@@ -69,8 +69,10 @@ class archivedsessions implements renderable, templatable {
     public function export_for_template(renderer_base $output) {
         global $USER, $CFG;
 
+        $searchText = optional_param('search',null,PARAM_RAW);
+       
         // Get data for the block.
-        $sessionsenrol = \local_mentor_core\session_api::get_user_sessions($USER->id);
+        $sessionsenrol = \local_mentor_core\session_api::get_user_sessions($USER->id, false,true,$searchText);
 
         // Data for the training and session sheet.
         $finalsessions = [];

@@ -29,24 +29,26 @@ define([
             });
 
             // Event for open or close trainings block
-            $('.block_archivedsessions .open-block').on('click', function (e) {
-                var openButton = $(e.currentTarget);
-                var blockArchivedSessions = $(e.currentTarget).closest('.block_archivedsessions')[0];
-                if (blockArchivedSessions.classList.contains('hidden-block')) {
-                    // Open block
-                    blockArchivedSessions.classList.remove('hidden-block');
-                    openButton.html('<span class="txt">' + M.util.get_string('showless', 'block_archivedsessions') + '</span>-');
-                    $('.block-archivedsessions').show();
-
-                    // The block must be visible to add images.
-                    that.addImages();
-                } else {
-                    // Close block
-                    blockArchivedSessions.classList.add('hidden-block');
-                    openButton.html('<span class="txt">' + M.util.get_string('showmore', 'block_archivedsessions') + '</span>+');
-                    $('.block-archivedsessions').hide();
-                }
-            });
+            $(document).ready(function(){
+                $('.block_archivedsessions .open-block').on('click', function (e) {
+                    var openButton = $(e.currentTarget);
+                    var blockArchivedSessions = $(e.currentTarget).closest('.block_archivedsessions')[0];
+                    if (blockArchivedSessions.classList.contains('hidden-block')) {
+                        // Open block
+                        blockArchivedSessions.classList.remove('hidden-block');
+                        openButton.html('<span class="txt">' + M.util.get_string('showless', 'block_archivedsessions') + '</span>-');
+                        $('.block-archivedsessions').show();
+    
+                        // The block must be visible to add images.
+                        that.addImages();
+                    } else {
+                        // Close block
+                        blockArchivedSessions.classList.add('hidden-block');
+                        openButton.html('<span class="txt">' + M.util.get_string('showmore', 'block_archivedsessions') + '</span>+');
+                        $('.block-archivedsessions').hide();
+                    }
+                });
+            })
 
         },
         /**
