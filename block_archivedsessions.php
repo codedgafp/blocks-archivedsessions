@@ -132,9 +132,9 @@ class block_archivedsessions extends block_base {
         if (!empty($content)) {
             $title = '<div class="block-title"><h2>' . $this->title . '</h2>' . $this->help_button() . '</div>';
             $this->content->text .= $title;
-            $this->content->text .= '<div class="open-block"><span class="txt">' .
+            $this->content->text .= '<div class="open-block"><button class="button-showless-showmore">' .
                                     get_string('showmore', 'block_archivedsessions')
-                                    . '</span>+</div>';
+                                    . '</button> +</div>';
         }
 
         $this->content->text .= $content;
