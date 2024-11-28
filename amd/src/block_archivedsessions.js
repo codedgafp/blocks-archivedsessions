@@ -36,7 +36,7 @@ define([
                     if (blockArchivedSessions.classList.contains('hidden-block')) {
                         // Open block
                         blockArchivedSessions.classList.remove('hidden-block');
-                        openButton.html('<button class="button-showless-showmore>' + M.util.get_string('showless', 'block_archivedsessions') + '</button> -');
+                        openButton.html('<button class="button-showless-showmore">' + M.util.get_string('showless', 'block_archivedsessions') + '</button> -');
                         $('.block-archivedsessions').show();
     
                         // The block must be visible to add images.
