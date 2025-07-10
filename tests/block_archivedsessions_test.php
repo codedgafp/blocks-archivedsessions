@@ -169,10 +169,10 @@ class block_archivedsessions_testcase extends advanced_testcase {
         $content = $block->get_content();
 
         self::assertIsObject($content);
-        self::assertObjectHasAttribute('text', $content);
+        self::assertObjectHasProperty('text', $content);
         self::assertEmpty($content->footer);
 
-        self::assertObjectHasAttribute('footer', $content);
+        self::assertObjectHasProperty('footer', $content);
         self::assertEmpty($content->footer);
 
         self::resetAllData();
