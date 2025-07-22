@@ -21,11 +21,14 @@ define([
             pagination.initPagination($('.block-archivedsessions .block-session-tile'), $('#archivedsessions-pagination'), 12, true, this.addImages);
 
             // Redirect link event.
-            $('.block-archivedsessions .session-more-information').on('click', function (event) {
-                event.preventDefault();
-                event.stopPropagation();
+            $('.block-archivedsessions .session-more-information').on('click keydown', function (event) {
+
                 var sessionId = $(event.currentTarget).data().sessionId;
-                window.location.href = M.cfg.wwwroot + '/local/trainings/pages/training.php?sessionid=' + sessionId;
+                 if (event.type === 'click' || event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    window.location.href = M.cfg.wwwroot + '/local/trainings/pages/training.php?sessionid=' + sessionId;
+                 }
             });
 
             // Event for open or close trainings block
@@ -48,7 +51,22 @@ define([
                         $('.block-archivedsessions').hide();
                     }
                 });
-            })
+            });
+
+            $(document).on('keydown', '.block-archivedsessions .block-session-tile', function(event) {
+                if (event.which === 32) { // Spacebar
+                    event.preventDefault(); 
+                    this.click();
+                }
+            });
+
+            $(document).on('keydown', '.block-archivedsessions .session-more-information', function(event) {
+                if (event.which == 13 || event.which === 32) {
+                    event.preventDefault()
+                    event.stopPropagation();
+                    $(this).click();
+                }
+            });
 
         },
         /**
