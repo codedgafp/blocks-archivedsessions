@@ -15,7 +15,7 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 
-<a class="block-session-tile" style="display: none;" href="{{{ url }}}" tabindex="0" title="{{fullname}}">
+<div class="block-session-tile" style="display: none;" tabindex="0" title="{{fullname}}">
     <div class="session-tile-thumbnail">
         <div class="session-tile-thumbnail-size">
             {{{ thumbnail }}}
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="information {{ status }}">
-        <h3 class="name {{ css_isopenedregistration }} {{ css_completed }}">
+        <a href="{{{ url }}}" class="block-session-tile-url name {{ css_isopenedregistration }} {{ css_completed }}">
             {{ fullname }}
         </h3>
         <p class="status {{ css_completed }}">
@@ -39,4 +39,4 @@
 
         {{{ inprogressshowprogress }}}
     </div>
-</a>
+</div>
