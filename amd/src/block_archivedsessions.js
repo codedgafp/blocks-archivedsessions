@@ -68,6 +68,11 @@ define([
                 }
             });
 
+            $('.block-archivedsessions .block-session-tile').on('click', function (e) {
+                const url = $(e.currentTarget).find('.block-session-tile-url').attr('href');
+
+                window.location.href = url;
+            });
         },
         /**
          * Add images into trainings tiles
