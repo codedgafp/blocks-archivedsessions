@@ -207,30 +207,6 @@
             justify-content: center;
             background-color: gray;
 
-            .session-tile-labels {
-              position: absolute;
-              bottom: 11px;
-              left: 19px;
-              display: flex;
-              gap: 11px;
-
-              .session-tile-label {
-                color: #ffffff;
-                font-weight: bold;
-                opacity: 0.75;
-                border-radius: 12px;
-                background-color: #000091;
-                padding: 4px 13px 4px 12px;
-                display: flex;
-                align-items: center;
-                font-size: 12px;
-
-                @media (width: 1366px) {
-                  font-size: 10px;
-                }
-              }
-            }
-
             .session-tile-thumbnail-size {
               display: flex;
               justify-content: center;
@@ -351,6 +327,27 @@
                 left: 0;
                 height: 4px;
                 background-color: #008941;
+              }
+            }
+
+            .session-tile-labels {
+              display: flex;
+              gap: 11px;
+
+              .session-tile-label {
+                width: fit-content;
+                color: #ffffff;
+                font-weight: bold;
+                opacity: 0.75;
+                border-radius: 12px;
+                background-color: #000091;
+                font-size: 12px;
+                margin: 0;
+                padding: 5px 15px;
+
+                @media (width: 1366px) {
+                  font-size: 10px;
+                }
               }
             }
           }
